@@ -1,0 +1,38 @@
+{
+    "name":         "majora/orient-db-bundle",
+    "version":      "0.1",
+    "description":  "https://github.com/AntonTerekhov/OrientDB-PHP Symfony wrapper",
+    "keywords":     ["framework", "Symfony", "bundle"],
+    "type":         "library",
+    "license":      "MIT",
+    "authors":     [
+        {
+            "name":     "Quentin Cerny",
+            "email":    "quentin.cerny@gmail.com",
+            "homepage": "https://github.com/Nyxis"
+        },
+        {
+            "name": "LinkValue partners",
+            "homepage": "https://github.com/orgs/LinkValue/people"
+        },
+        {
+            "name":     "LinkValue",
+            "email":    "contact@link-value.fr",
+            "homepage": "http://link-value.fr/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/symfony": ">=2.7.0"
+    },
+    "suggest": {
+        "majora/generator-bundle": "If you want to generate powerfull architecture without write to more code."
+    },
+    "autoload": {
+        "psr-4": {
+            "Majora\\Bundle\\": "src/Majora/Bundle",
+            "Majora\\Component\\": "src/Majora/Component"
+        }
+    },
+    "minimum-stability": "dev"
+}
