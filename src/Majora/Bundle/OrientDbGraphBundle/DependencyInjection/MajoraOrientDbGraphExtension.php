@@ -24,5 +24,12 @@ class MajoraOrientDbGraphExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        if ($container->hasDefinition('majora.orient_db.graph_engine')) {
+            $connectionDefinition = $container->getDefinition('majora.orient_db.graph_engine');
+            $connectionDefinition->addMethodCall('registerConnection', array(
+                'default', $config
+            ));
+        }
     }
 }

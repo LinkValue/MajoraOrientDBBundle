@@ -2,6 +2,8 @@
 
 namespace Majora\Bundle\OrientDbGraphBundle;
 
+use Majora\Bundle\OrientDbGraphBundle\DependencyInjection\Compiler\GraphClientCompilerPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -9,5 +11,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class MajoraOrientDbGraphBundle extends Bundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new GraphClientCompilerPass());
+    }
 
 }
